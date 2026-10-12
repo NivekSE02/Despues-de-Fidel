@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.tsx';
+import Hero from '../components/Hero.tsx';
+import Manifesto from '../components/Manifesto.tsx';
+import Discography from '../components/Discography.tsx';
+import TourSection from '../components/TourSection.tsx';
+import Footer from '../components/Footer.tsx';
+---
+
+<Layout>
+  <Header client:load />
+  <main>
+    <Hero client:load />
+    <Manifesto />
+    <Discography client:visible />
+    <TourSection client:visible />
+  </main>
+  <Footer client:load />
+</Layout>
