@@ -5,20 +5,88 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #faf9f7;
+    color: #3a2024;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(123, 17, 35, 0.15);
+    color: #3a2024;
   }
 }
 
-/* Scrollbar conceptual minimalista */
+/* ── Scrollbar: barely visible ── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(123, 17, 35, 0.3);
-  border-radius: 3px;
+  background: rgba(123, 17, 35, 0.18);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(123, 17, 35, 0.7);
+  background: rgba(123, 17, 35, 0.4);
 }
+
+/* ── Ominous slow pulse used on accent elements ── */
+@keyframes breathe {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes drift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.anim-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.anim-drift {
+  animation: drift 6s ease-in-out infinite;
+}
+
+.anim-fade-in {
+  animation: fadeInUp 1s ease-out both;
+}
+
+.anim-line-grow {
+  animation: lineGrow 1.2s ease-out both;
+  transform-origin: left;
+}
+
+/* ── Staggered reveal delays ── */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1.0s; }

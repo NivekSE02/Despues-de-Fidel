@@ -1,33 +1,24 @@
 ---
 import '../styles/globals.css';
-import ThemeToggle from '../components/ThemeToggle.tsx';
 ---
 <!DOCTYPE html>
-<html lang="es" class="h-full">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Después de Fidel • Oficial</title>
-    <meta name="description" content="Propuesta musical y conceptual de Después de Fidel." />
+    <title>Después de Fidel</title>
+    <meta name="description" content="Después de Fidel." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Google Fonts: Cormorant Garamond & Inter para estética sobria y editorial -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <style>
-      html, body {
-        height: 100%;
-        font-family: 'Inter', sans-serif;
-      }
-      .font-serif-conceptual {
-        font-family: 'Cormorant Garamond', serif;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-white text-zinc-900 min-h-screen flex flex-col transition-colors duration-500 selection:bg-[#7B1123] selection:text-white dark:bg-[#0c0c0d] dark:text-[#f4f4f5]">
-    <div class="fixed top-5 right-5 z-50">
-      <ThemeToggle client:load />
-    </div>
+
+  <body class="bg-bone text-ink font-body min-h-screen flex flex-col">
     <slot />
   </body>
 </html>
